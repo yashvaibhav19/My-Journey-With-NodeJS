@@ -1,3 +1,8 @@
 const { parity , name , add } = require('./utils.js');
 
-console.log(add(45,5));
+//i was not exported but its value
+//is modified in the file nonetheless
+console.log(parity());
+console.log(parity());
+console.log(parity());
+console.log(parity());
