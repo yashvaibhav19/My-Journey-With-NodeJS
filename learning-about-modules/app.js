@@ -1,4 +1,4 @@
-const fs = require('fs');
-fs.writeFileSync("random.txt","Loren Ipsum"); //will create file and write
-fs.appendFileSync('random.txt',"\nAppended to a new line :thumbsup:"); //will append text
-fs.writeFileSync('random.txt',"Lets see how far this goes"); //will overwrite
+const name  = require('./utils.js'); // Only exports name
+// Tho it has the capacity to export an object of variables/methods
+const printThis = `My name is ${name}`;
+console.log(printThis);
