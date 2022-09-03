@@ -8,3 +8,7 @@ Whenever you don't find a node_module folder, all you need to do is run
 npm install
 ```
 and all the required dependencies will be installed on the fly via package.json file.  
+```bash
+npm install nodemon -g
+```
+Will install nodemon _globally_.
