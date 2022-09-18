@@ -1,3 +1,4 @@
 *.docx
 *.pdf
 node_modules/
+weather-app/
