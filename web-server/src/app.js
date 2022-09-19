@@ -5,9 +5,12 @@ const express = require('express');
 const app = express()
 const publicDirectoryPath = path.join(__dirname,'../public');
 const viewsDirectoryPath = path.join(__dirname,'../templates/views');
+const partialsPath = path.join(__dirname,'../templates/partials');
 
 app.set('view engine','hbs');
 app.set('views',viewsDirectoryPath);
+
+hbs.registerPartials(partialsPath)
 //example.com
 app.get('',(req,res)=>{
     res.render('index',{
@@ -25,9 +28,19 @@ app.get('/about',(req,res)=>{
 
 //example.com/invoice
 app.get('/invoice',(req,res)=>{
+    if(!req.query.search)
+    {
+        return res.send({
+            error: 'Please Provide a Search Query'
+        })
+    }
     res.send('send this when route:invoice is triggered');
 })
 
+//error page
+app.get('*',(req,res)=>{
+    res.send('An error occured, please go back to home')
+})
 app.listen(3000,()=>{
     console.log('server has started functioning');
 });
