@@ -7,6 +7,8 @@ const publicDirectoryPath = path.join(__dirname,'../public');
 const viewsDirectoryPath = path.join(__dirname,'../templates/views');
 const partialsPath = path.join(__dirname,'../templates/partials');
 
+const port = process.env.PORT || 3000
+
 app.set('view engine','hbs');
 app.set('views',viewsDirectoryPath);
 
@@ -41,6 +43,6 @@ app.get('/invoice',(req,res)=>{
 app.get('*',(req,res)=>{
     res.send('An error occured, please go back to home')
 })
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log('server has started functioning');
 });
