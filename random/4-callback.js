@@ -1,10 +1,11 @@
-const delayedAdd = (a, b, callback) => {
+const testCallback = (callback) => {
     setTimeout(()=>{
-        sum = a+b;
-        callback(sum);
-    },5000);
+        callback('mock error',undefined)
+        callback(undefined, 'mock success')
+    },4000)
 }
 
-delayedAdd(12,5,(ans)=>{
-    console.log(ans);
+testCallback((error,res)=>{
+    if(error) return console.log(error)
+    console.log(res)
 })
